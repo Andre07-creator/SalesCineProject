@@ -8,6 +8,7 @@ namespace SalesCineProject.Models
 {
     public class SalesRecord
     {
+        const double price = 20.00;
         public int Id { get; set; }
         public double Price { get; set; }
         public DateTime Date { get; set; }
@@ -17,7 +18,7 @@ namespace SalesCineProject.Models
         {
         }
 
-        public SalesRecord(int id, double price, DateTime date, PaymentForm payment)
+        public SalesRecord(int id, DateTime date, PaymentForm payment)
         {
             id = Id;
             Price = price;
