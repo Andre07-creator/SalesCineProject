@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using SalesCineProject.Services;
 
 namespace SalesCineProject
 {
@@ -41,6 +42,7 @@ options.UseMySql(Configuration.GetConnectionString("SalesCineProjectContext"), b
 builder.MigrationsAssembly("SalesCineProject")));
 
             services.AddScoped<SeedingService>();
+            services.AddScoped<TicketService>();
 
         }
 
