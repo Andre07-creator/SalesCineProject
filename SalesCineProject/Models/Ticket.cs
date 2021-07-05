@@ -2,29 +2,30 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using SalesCineProject.Models.Enums;
 
 namespace SalesCineProject.Models
 {
     public class Ticket
     {
-        const string namemovie = "Homem aranha 2";
-        const int hour = 15 ;
-
         public int Id { get; set; }
-        public string NameMovie { get; set; }
-        public int ClientId { get; set; }
-        public int SalesRecordId { get; set; }
-        public int Hour { get; set; }
+        public string Client { get; set; }
+        public double Price { get; set; }
+        public DateTime Date { get; set; }
+        public PaymentForm Payment { get; set; }
+        public ICollection<Movie> Movies { get; set; } = new List<Movie>();
 
         public Ticket()
         {
         }
 
-        public Ticket(int id)
+        public Ticket(int id, string client, double price, DateTime date, PaymentForm payment)
         {
             Id = id;
-            NameMovie = namemovie;
-            Hour = hour;
+            Client = client;
+            Price = price;
+            Date = date;
+            Payment = payment;
         }
     }
 }
