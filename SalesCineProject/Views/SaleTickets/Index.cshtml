@@ -1,7 +1,57 @@
-﻿
-@{
-    ViewData["Index"] = "Index";
-}
-<h2>@ViewData["Index"]</h2>
+﻿@model IEnumerable<SalesCineProject.Models.ViewModels.TicketViewModel>
 
-<p>View de teste.</p>
+@{
+    ViewData["Title"] = "SaleTickets";
+}
+<h2>@ViewData["Title"]</h2>
+
+<table class="table table-striped table-hover">
+
+    <thead>
+        <tr class="success">
+            <th>
+                @Html.DisplayNameFor(model => model.Client.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ticket.NameMovie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ticket.Hour)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SalesRecord.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SalesRecord.Payment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SalesRecord.Date)
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>
+                    @Html.DisplayFor(modelItem => item.Client.Name)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.NameMovie)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.Hour)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelitem => item.SalesRecord.Price)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.SalesRecord.Date)
+                </th>
+
+            </tr>
+        }
+    </tbody>
+
+</table>

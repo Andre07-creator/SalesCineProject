@@ -8,13 +8,15 @@ namespace SalesCineProject.Models
     public class Ticket
     {
         const string namemovie = "Homem aranha 2";
-        const string hour = "15 hrs";
+        const int hour = 15 ;
 
         public int Id { get; set; }
         public string NameMovie { get; set; }
         public Client Client { get; set; }
+        public int ClientId { get; set; }
         public SalesRecord SalesRecord { get; set; }
-        public string Hour { get; set; }
+        public int SalesRecordId { get; set; }
+        public int Hour { get; set; }
 
         public Ticket()
         {
