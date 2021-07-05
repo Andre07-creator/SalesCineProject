@@ -1,4 +1,4 @@
-﻿@model IEnumerable<SalesCineProject.Models.ViewModels.TicketViewModel>
+﻿@model IEnumerable<SalesCineProject.Models.Ticket>
 
 @{
     ViewData["Title"] = "SaleTickets";
@@ -10,22 +10,22 @@
     <thead>
         <tr class="success">
             <th>
-                @Html.DisplayNameFor(model => model.Client.Name)
+                @Html.DisplayNameFor(model => model)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Ticket.NameMovie)
+                @Html.DisplayNameFor(model => model.NameMovie)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Ticket.Hour)
+                @Html.DisplayNameFor(model => model.Hour)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.SalesRecord.Price)
+                @Html.DisplayNameFor(model => model)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.SalesRecord.Payment)
+                @Html.DisplayNameFor(model => model)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.SalesRecord.Date)
+                @Html.DisplayNameFor(model => model)
             </th>
         </tr>
     </thead>
@@ -35,7 +35,7 @@
         {
             <tr>
                 <th>
-                    @Html.DisplayFor(modelItem => item.Client.Name)
+                    @Html.DisplayFor(modelItem => item)
                 </th>
                 <th>
                     @Html.DisplayFor(modelItem => item.NameMovie)
@@ -44,10 +44,10 @@
                     @Html.DisplayFor(modelItem => item.Hour)
                 </th>
                 <th>
-                    @Html.DisplayFor(modelitem => item.SalesRecord.Price)
+                    @Html.DisplayFor(modelitem => item)
                 </th>
                 <th>
-                    @Html.DisplayFor(modelItem => item.SalesRecord.Date)
+                    @Html.DisplayFor(modelItem => item)
                 </th>
 
             </tr>

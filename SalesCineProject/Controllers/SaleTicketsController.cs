@@ -13,23 +13,17 @@ namespace SalesCineProject.Controllers
     {
 
         private readonly TicketService _ticketservice;
-        private readonly SalesRecordService _salesrecordservice;
-        private readonly ClientService _clientservice;
 
-        public SaleTicketsController(TicketService ticketservice, 
-            SalesRecordService salesrecordservice, ClientService clientservice)
+        public SaleTicketsController(TicketService ticketservice)
+      
         {
-            _ticketservice = ticketservice;
-            _salesrecordservice = salesrecordservice;
-            _clientservice = clientservice;
+            _ticketservice = ticketservice;            
         }
 
         public IActionResult Index()
         {
             
             var ticket = _ticketservice.FindAll();
-            var salerecord = _salesrecordservice.FindAll();
-            var clientservice = _clientservice.FindAll();
             var viewmodel = new TicketViewModel();
 
 

@@ -12,9 +12,7 @@ namespace SalesCineProject.Models
 
         public int Id { get; set; }
         public string NameMovie { get; set; }
-        public Client Client { get; set; }
         public int ClientId { get; set; }
-        public SalesRecord SalesRecord { get; set; }
         public int SalesRecordId { get; set; }
         public int Hour { get; set; }
 
@@ -22,12 +20,10 @@ namespace SalesCineProject.Models
         {
         }
 
-        public Ticket(int id, Client client, SalesRecord salesRecord)
+        public Ticket(int id)
         {
             Id = id;
             NameMovie = namemovie;
-            Client = client;
-            SalesRecord = salesRecord;
             Hour = hour;
         }
     }

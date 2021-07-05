@@ -13,8 +13,6 @@ namespace SalesCineProject.Models
         {
         }
 
-        public DbSet<Client> Client { get; set; }
-        public DbSet<SalesRecord> SalesRecord { get; set; }
         public DbSet<Ticket> Ticket { get; set; }
     }
 }
