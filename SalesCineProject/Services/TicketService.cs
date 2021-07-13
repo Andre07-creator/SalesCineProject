@@ -25,6 +25,16 @@ namespace SalesCineProject.Services
             _context.Add(obj);
             _context.SaveChanges();
         }
+        public Ticket FindById(int? id)
+        {
+            return _context.Ticket.FirstOrDefault(obj => obj.Id == id);
+        }
 
+        public void Remove(int id)
+        {
+            var obj = _context.Ticket.Find(id);
+            _context.Ticket.Remove(obj);
+            _context.SaveChanges();
+        }
     }
 }

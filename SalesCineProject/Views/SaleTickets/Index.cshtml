@@ -46,7 +46,9 @@
             <th>
                 @Html.DisplayFor(modelItem => item.Payment)
             </th>
-
+            <th>
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> 
+            </th>
         </tr>
         }
     </tbody>
