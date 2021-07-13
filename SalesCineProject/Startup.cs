@@ -43,6 +43,7 @@ builder.MigrationsAssembly("SalesCineProject")));
 
             services.AddScoped<SeedingService>();
             services.AddScoped<TicketService>();
+            services.AddScoped<MovieService>();
 
         }
 

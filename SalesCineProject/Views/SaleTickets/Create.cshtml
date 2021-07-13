@@ -1,0 +1,41 @@
+﻿@model SalesCineProject.Models.ViewModels.TicketViewModel
+@{
+    ViewData["Title"] = "Sale";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h4>Make sale</h4>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div class="form-group">
+                <label asp-for="Ticket.Client" class="control-label"></label>
+                <input asp-for="Ticket.Client" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Ticket.Price" class="control-label"></label>
+                <input asp-for="Ticket.Price" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Ticket.Payment" class="control-label"></label>
+                <input asp-for="Ticket.Payment" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Ticket.MovieId" class="control-label"></label>
+                <select asp-for="Ticket.MovieId" asp-items="@(new SelectList(Model.Movies, "Id","Name"))" class="form-control"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ticket.MovieId" class="control-label"></label>
+                <select asp-for="Ticket.MovieId" asp-items="@(new SelectList(Model.Movies, "Id","Hour"))" class="form-control"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>

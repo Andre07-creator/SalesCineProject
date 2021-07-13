@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SalesCineProject.Models;
 
 namespace SalesCineProject.Migrations
 {
     [DbContext(typeof(SalesCineProjectContext))]
-    partial class SalesCineProjectContextModelSnapshot : ModelSnapshot
+    [Migration("20210706223524_UpdateEntites")]
+    partial class UpdateEntites
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -44,8 +46,6 @@ namespace SalesCineProject.Migrations
 
                     b.Property<DateTime>("Date");
 
-                    b.Property<int>("MovieId");
-
                     b.Property<int>("Payment");
 
                     b.Property<double>("Price");
@@ -57,7 +57,7 @@ namespace SalesCineProject.Migrations
 
             modelBuilder.Entity("SalesCineProject.Models.Movie", b =>
                 {
-                    b.HasOne("SalesCineProject.Models.Ticket", "Ticket")
+                    b.HasOne("SalesCineProject.Models.Ticket")
                         .WithMany("Movies")
                         .HasForeignKey("TicketId");
                 });

@@ -14,5 +14,6 @@ namespace SalesCineProject.Models
         }
 
         public DbSet<Ticket> Ticket { get; set; }
+        public DbSet<Movie> Movie { get; set; }
     }
 }

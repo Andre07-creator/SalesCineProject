@@ -13,21 +13,33 @@ namespace SalesCineProject.Controllers
     {
 
         private readonly TicketService _ticketservice;
+        private readonly MovieService _movieservice;
 
-        public SaleTicketsController(TicketService ticketservice)
+        public SaleTicketsController(TicketService ticketservice, MovieService movieservice)
       
         {
-            _ticketservice = ticketservice;            
+            _ticketservice = ticketservice;
+            _movieservice = movieservice;
         }
 
         public IActionResult Index()
         {
             
-            var ticket = _ticketservice.FindAll();
-            var viewmodel = new TicketViewModel();
-
-
-            return View(viewmodel);
+            var list = _ticketservice.FindAll();
+            return View(list);
+        }
+        public IActionResult Create()
+        {
+            var movie = _movieservice.FindAll();
+            var viewModels = new TicketViewModel { Movies = movie };
+            return View(viewModels);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Ticket ticket)
+        {
+            _ticketservice.Insert(ticket);
+            return RedirectToAction(nameof(Index));
         }
     }
 }

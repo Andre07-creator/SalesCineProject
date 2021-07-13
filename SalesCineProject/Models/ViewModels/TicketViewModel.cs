@@ -9,6 +9,7 @@ namespace SalesCineProject.Models.ViewModels
     public class TicketViewModel
     {
         public Ticket Ticket { get; set; }
+        public ICollection<Movie> Movies { get; set; }
 
     }
 

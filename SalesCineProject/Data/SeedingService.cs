@@ -17,26 +17,22 @@ namespace SalesCineProject.Data
 
         public void Seed()
         {
-            if  (_context.Ticket.Any())
+            if  (_context.Ticket.Any() || _context.Movie.Any())
             {
                 return;
             }
 
-            //Client c1 = new Client("Ricardo", 1);
-           // Client c2 = new Client("Paulão", 2);
-           // Client c3 = new Client("Richard", 3);
 
-            //SalesRecord sr1 = new SalesRecord(1, DateTime.Now, PaymentForm.Money);
-            //SalesRecord sr2 = new SalesRecord(2, DateTime.Now, PaymentForm.Pix);
-            //SalesRecord sr3 = new SalesRecord(3, DateTime.Now, PaymentForm.Card);
+            Ticket t1 = new Ticket(1, "Paulão", 20, PaymentForm.Card);
+            Ticket t2 = new Ticket(2, "Ana", 20,  PaymentForm.Money);
+            Ticket t3 = new Ticket(3, "Julia", 20,  PaymentForm.Pix);
 
-            //Ticket t1 = new Ticket(1, c1, sr1);
-           // Ticket t2 = new Ticket(2, c2, sr2);
-            //Ticket t3 = new Ticket(3, c3, sr3);
+            Movie m1 = new Movie(1, "Homen aranha 3", new DateTime(2021, 7, 10, 15, 0, 0), t1);
+            Movie m2 = new Movie(2, "Batman", new DateTime(2, 7, 10, 18, 0, 0), t2);
+            Movie m3 = new Movie(3, "Truman show", new DateTime(2021, 7, 10, 10, 0, 0), t3);
 
-           // _context.Client.AddRange(c1, c2, c3);
-           // _context.SalesRecord.AddRange(sr1, sr2, sr3);
-           // _context.Ticket.AddRange(t1, t2, t3);
+            _context.Ticket.AddRange(t1, t2, t3);
+            _context.Movie.AddRange(m1, m2, m3);
 
             _context.SaveChanges();
         }

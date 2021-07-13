@@ -2,29 +2,23 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Data;
 using SalesCineProject.Models;
 
 namespace SalesCineProject.Services
 {
-    public class TicketService
+    public class MovieService
     {
         private readonly SalesCineProjectContext _context;
 
-        public TicketService(SalesCineProjectContext context)
+        public MovieService(SalesCineProjectContext context)
         {
             _context = context;
         }
 
-        public List<Ticket> FindAll()
+        public List<Movie> FindAll()
         {
-            return _context.Ticket.ToList();
+            return _context.Movie.OrderBy(x => x.Name).ToList();
         }
-        public void Insert(Ticket obj)
-        {
-           
-            _context.Add(obj);
-            _context.SaveChanges();
-        }
-
     }
 }
