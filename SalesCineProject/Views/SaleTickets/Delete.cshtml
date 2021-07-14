@@ -1,5 +1,45 @@
-﻿@{
+﻿@model SalesCineProject.Models.Ticket
+@{
     ViewData["Title"] = "Delete";
 }
 
 <h2>@ViewData["Title"]</h2>
+<h3> Are sure you want delete this ?</h3>
+
+<div>
+    <h4> Sale</h4>
+    <hr />
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => Model.Client)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => Model.Client)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => Model.Price)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => Model.Price)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => Model.Date)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => Model.Date)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => Model.Payment)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => Model.Payment)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <a asp-action="Index">Back to list</a>
+    </form>
+</div>
