@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using SalesCineProject.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace SalesCineProject.Services
 {
@@ -27,7 +28,7 @@ namespace SalesCineProject.Services
         }
         public Ticket FindById(int? id)
         {
-            return _context.Ticket.FirstOrDefault(obj => obj.Id == id);
+            return _context.Ticket.Include(obj => obj.Movies).FirstOrDefault(obj => obj.Id == id);
         }
 
         public void Remove(int id)

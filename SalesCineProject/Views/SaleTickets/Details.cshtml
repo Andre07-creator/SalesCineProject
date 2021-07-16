@@ -1,0 +1,38 @@
+﻿@model SalesCineProject.Models.Ticket
+
+@{ 
+    ViewData["Title"] = "Details";
+}
+
+<h2>@ViewData["Title"]</h2>
+<div>
+    <h4> Details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => Model.Client)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => Model.Client)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => Model.Price)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => Model.Price)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => Model.Date)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => Model.Date)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => Model.Payment)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => Model.Payment)
+        </dd>
+    </dl>
+
+</div>
