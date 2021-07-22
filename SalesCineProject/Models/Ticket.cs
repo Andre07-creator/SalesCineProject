@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using SalesCineProject.Models.Enums;
 
 namespace SalesCineProject.Models
@@ -15,6 +13,7 @@ namespace SalesCineProject.Models
         public PaymentForm Payment { get; set; }
         public int MovieId { get; set; }
         public ICollection<Movie> Movies { get; set; } = new List<Movie>();
+        //public Movie Movie { get; set; }
 
         public Ticket()
         {

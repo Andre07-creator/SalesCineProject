@@ -1,4 +1,4 @@
-﻿@model SalesCineProject.Models.Ticket
+﻿@model SalesCineProject.Models.Movie
 
 @{ 
     ViewData["Title"] = "Details";
@@ -10,29 +10,42 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => Model.Client)
+            @Html.DisplayNameFor(model => Model.Ticket.Client)
         </dt>
         <dd>
-            @Html.DisplayFor(model => Model.Client)
+            @Html.DisplayFor(model => Model.Ticket.Client)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => Model.Price)
+            @Html.DisplayNameFor(model => Model.Ticket.Price)
         </dt>
         <dd>
-            @Html.DisplayFor(model => Model.Price)
+            @Html.DisplayFor(model => Model.Ticket.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => Model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => Model.Name)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => Model.Date)
+            @Html.DisplayNameFor(model => Model.Hour)
         </dt>
         <dd>
-            @Html.DisplayFor(model => Model.Date)
+            @Html.DisplayFor(model => Model.Hour.Hour)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => Model.Payment)
+            @Html.DisplayNameFor(model => Model.Ticket.Date)
         </dt>
         <dd>
-            @Html.DisplayFor(model => Model.Payment)
+            @Html.DisplayFor(model => Model.Ticket.Date)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => Model.Ticket.Payment)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => Model.Ticket.Payment)
         </dd>
     </dl>
-
 </div>
+<a asp-action="Index" class="btn btn-default">Back to list</a>

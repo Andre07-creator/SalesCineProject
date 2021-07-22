@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Data;
 using SalesCineProject.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace SalesCineProject.Services
 {
@@ -18,7 +19,11 @@ namespace SalesCineProject.Services
 
         public List<Movie> FindAll()
         {
-            return _context.Movie.OrderBy(x => x.Name).ToList();
+            return _context.Movie.ToList();
+        }
+        public Movie FindById(int? id)
+        {
+            return _context.Movie.Include(obj => obj.Ticket).FirstOrDefault(obj => obj.Id == id);
         }
     }
 }

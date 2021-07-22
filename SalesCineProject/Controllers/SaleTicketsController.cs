@@ -68,7 +68,7 @@ namespace SalesCineProject.Controllers
             {
                 return NotFound();
             }
-            var obj = _ticketservice.FindById(id.Value);
+            var obj = _movieservice.FindById(id.Value);
 
             if (obj == null)
             {
