@@ -76,5 +76,19 @@ namespace SalesCineProject.Controllers
             }
             return View(obj);
         }
+
+        public IActionResult Update(int? id)
+        {
+            if(id == null)
+            {
+                return NotFound();
+            }
+
+            var obj = _ticketservice.FindById(id);
+
+            List<Movie> movies = new List<Movie>();
+            TicketViewModel viewModel = new TicketViewModel { Ticket = obj, Movies = movies };
+            return View(viewModel);
+        }
     }
 }

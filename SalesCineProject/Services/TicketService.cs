@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using SalesCineProject.Models;
 using Microsoft.EntityFrameworkCore;
+using SalesCineProject.Services.Exceptions;
 
 namespace SalesCineProject.Services
 {
@@ -36,6 +37,24 @@ namespace SalesCineProject.Services
             var obj = _context.Ticket.Find(id);
             _context.Ticket.Remove(obj);
             _context.SaveChanges();
+        }
+
+        public void Update(Ticket obj)
+        {
+            if(!_context.Ticket.Any(x => x.Id == obj.Id))
+            {
+                throw new NotFoundException("Id not found");
+            }
+
+            try
+            {
+                _context.Update(obj);
+                _context.SaveChanges();
+            }
+            catch(DbConcurrencyException e)
+            {
+                throw new DbConcurrencyException(e.Message);
+            }
         }
     }
 }
