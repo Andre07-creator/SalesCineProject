@@ -77,7 +77,7 @@ namespace SalesCineProject.Controllers
             return View(obj);
         }
 
-        public IActionResult Update(int? id)
+        public IActionResult Edit(int? id)
         {
             if(id == null)
             {
@@ -86,8 +86,8 @@ namespace SalesCineProject.Controllers
 
             var obj = _ticketservice.FindById(id);
 
-            List<Movie> movies = new List<Movie>();
-            TicketViewModel viewModel = new TicketViewModel { Ticket = obj, Movies = movies };
+            var movie = _movieservice.FindAll();
+            TicketViewModel viewModel = new TicketViewModel { Ticket = obj, Movies = movie };
             return View(viewModel);
         }
     }
