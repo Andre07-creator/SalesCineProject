@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using SalesCineProject.Models;
 using SalesCineProject.Services;
 using SalesCineProject.Models.ViewModels;
+using SalesCineProject.Services.Exceptions;
 
 namespace SalesCineProject.Controllers
 {
@@ -89,6 +90,28 @@ namespace SalesCineProject.Controllers
             var movie = _movieservice.FindAll();
             TicketViewModel viewModel = new TicketViewModel { Ticket = obj, Movies = movie };
             return View(viewModel);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(int id, Ticket ticket)
+        {
+            if(id != ticket.Id)
+            {
+                return BadRequest();
+            }
+            try
+            {
+                _ticketservice.Update(ticket);
+                return RedirectToAction(nameof(Index));
+            }
+            catch (NotFoundException)
+            {
+                return NotFound();
+            }
+            catch (DbConcurrencyException)
+            {
+                return BadRequest();
+            }
         }
     }
 }
