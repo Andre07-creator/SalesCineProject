@@ -10,19 +10,19 @@ namespace SalesCineProject.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public DateTime Hour { get; set; }
-        public Ticket Ticket { get; set; }
+        //public Ticket Ticket { get; set; }
 
         public Movie()
         {
            
         }
 
-        public Movie(int id, string name, DateTime hour, Ticket ticket)
+        public Movie(int id, string name, DateTime hour)
         {
             Id = id;
             Name = name;
             Hour = hour;
-            Ticket = ticket;
+           // Ticket = ticket;
         }
     }
 }

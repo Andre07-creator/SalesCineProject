@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SalesCineProject.Models;
 
 namespace SalesCineProject.Migrations
 {
     [DbContext(typeof(SalesCineProjectContext))]
-    partial class SalesCineProjectContextModelSnapshot : ModelSnapshot
+    [Migration("20210727123322_UpdateSql")]
+    partial class UpdateSql
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -26,7 +28,11 @@ namespace SalesCineProject.Migrations
 
                     b.Property<string>("Name");
 
+                    b.Property<int?>("TicketId");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("TicketId");
 
                     b.ToTable("Movie");
                 });
@@ -48,17 +54,14 @@ namespace SalesCineProject.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("MovieId");
-
                     b.ToTable("Ticket");
                 });
 
-            modelBuilder.Entity("SalesCineProject.Models.Ticket", b =>
+            modelBuilder.Entity("SalesCineProject.Models.Movie", b =>
                 {
-                    b.HasOne("SalesCineProject.Models.Movie", "Movie")
-                        .WithMany()
-                        .HasForeignKey("MovieId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                    b.HasOne("SalesCineProject.Models.Ticket", "Ticket")
+                        .WithMany("Movies")
+                        .HasForeignKey("TicketId");
                 });
 #pragma warning restore 612, 618
         }

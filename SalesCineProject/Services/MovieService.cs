@@ -21,9 +21,9 @@ namespace SalesCineProject.Services
         {
             return _context.Movie.ToList();
         }
-        public Movie FindById(int? id)
-        {
-            return _context.Movie.Include(obj => obj.Ticket).FirstOrDefault(obj => obj.Id == id);
-        }
+        //public Movie FindById(int? id)
+      // {
+            //return _context.Movie.Include(obj => obj.Ticket).FirstOrDefault(obj => obj.Id == id);
+        //}
     }
 }

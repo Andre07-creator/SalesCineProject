@@ -29,7 +29,7 @@ namespace SalesCineProject.Services
         }
         public Ticket FindById(int? id)
         {
-            return _context.Ticket.Include(obj => obj.Movies).FirstOrDefault(obj => obj.Id == id);
+            return _context.Ticket.Include(obj => obj.Movie).FirstOrDefault(obj => obj.Id == id);
         }
 
         public void Remove(int id)

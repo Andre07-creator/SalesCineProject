@@ -28,6 +28,12 @@
             <th>
                 @Html.DisplayNameFor(model => model.Payment)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie.Hour)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie.Name)
+            </th>
         </tr>
     </thead>
 
@@ -47,6 +53,12 @@
             </th>
             <th>
                 @Html.DisplayFor(modelItem => item.Payment)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.Movie.Hour.Hour)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.Movie)
             </th>
             <th>
                 <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>

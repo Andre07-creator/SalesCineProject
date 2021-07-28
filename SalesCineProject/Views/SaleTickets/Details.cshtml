@@ -1,4 +1,4 @@
-﻿@model SalesCineProject.Models.Movie
+﻿@model SalesCineProject.Models.Ticket
 
 @{ 
     ViewData["Title"] = "Details";
@@ -10,41 +10,41 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => Model.Ticket.Client)
+            @Html.DisplayNameFor(model => Model.Client)
         </dt>
         <dd>
-            @Html.DisplayFor(model => Model.Ticket.Client)
+            @Html.DisplayFor(model => Model.Client)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => Model.Ticket.Price)
+            @Html.DisplayNameFor(model => Model.Price)
         </dt>
         <dd>
-            @Html.DisplayFor(model => Model.Ticket.Price)
+            @Html.DisplayFor(model => Model.Price)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => Model.Name)
+            @Html.DisplayNameFor(model => Model.Movie.Name)
         </dt>
         <dd>
-            @Html.DisplayFor(model => Model.Name)
+            @Html.DisplayFor(model => Model.Movie.Name)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => Model.Hour)
+            @Html.DisplayNameFor(model => Model.Movie.Hour)
         </dt>
         <dd>
-            @Html.DisplayFor(model => Model.Hour.Hour)
+            @Html.DisplayFor(model => Model.Movie.Hour.Hour)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => Model.Ticket.Date)
+            @Html.DisplayNameFor(model => Model.Date)
         </dt>
         <dd>
-            @Html.DisplayFor(model => Model.Ticket.Date)
+            @Html.DisplayFor(model => Model.Date)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => Model.Ticket.Payment)
+            @Html.DisplayNameFor(model => Model.Payment)
         </dt>
         <dd>
-            @Html.DisplayFor(model => Model.Ticket.Payment)
+            @Html.DisplayFor(model => Model.Payment)
         </dd>
     </dl>
 </div>
