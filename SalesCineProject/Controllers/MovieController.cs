@@ -22,5 +22,10 @@ namespace SalesCineProject.Controllers
             var List = _movieservice.FindAll();
             return View(List);
         }
+        public IActionResult Create()
+        {
+            var movie = _movieservice.FindAll();
+            return View(movie);
+        }
     }
 }
