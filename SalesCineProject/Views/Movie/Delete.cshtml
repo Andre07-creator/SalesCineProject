@@ -1,0 +1,25 @@
+﻿@model SalesCineProject.Models.Movie
+@{
+    ViewData["title"] = "Delete";
+}
+<h1>@ViewData["title"]</h1>
+<p>will you really delete this ?</p>
+<hr />
+
+<div>
+    <h4>Movie</h4>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => Model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => Model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => Model.Hour)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => Model.Hour.Hour)
+        </dd>
+    </dl>
+</div>

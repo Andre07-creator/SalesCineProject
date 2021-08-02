@@ -35,5 +35,18 @@ namespace SalesCineProject.Controllers
             _movieservice.Insert(movie);
             return RedirectToAction(nameof(Index));
         }
+        public IActionResult Delete(int? id)
+        {
+            if(id == null)
+            {
+                return NotFound();
+            }
+            var obj = _movieservice.FindById(id.Value);
+            if(obj == null)
+            {
+                return NotFound();
+            }
+            return View(obj);
+        }
     }
 }

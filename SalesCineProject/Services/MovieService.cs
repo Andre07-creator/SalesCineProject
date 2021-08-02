@@ -19,7 +19,7 @@ namespace SalesCineProject.Services
 
         public List<Movie> FindAll()
         {
-            return _context.Movie.ToList();
+            return _context.Movie.OrderBy(x => x.Name).ToList();
         }
 
 
@@ -30,9 +30,9 @@ namespace SalesCineProject.Services
         }
 
 
-        /*public Movie FindById(int? id)
+        public Movie FindById(int? id)
        {
-            return _context.Movie.Include(obj => obj.Ticket).FirstOrDefault(obj => obj.Id == id);
-        }*/
+            return _context.Movie.FirstOrDefault(obj => obj.Id == id);
+        }
     }
 }

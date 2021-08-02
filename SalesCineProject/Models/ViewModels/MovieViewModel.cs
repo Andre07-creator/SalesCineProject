@@ -8,5 +8,6 @@ namespace SalesCineProject.Models.ViewModels
     public class MovieViewModel
     {
         public Movie Movie { get; set; }
+
     }
 }
