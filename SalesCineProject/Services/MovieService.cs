@@ -23,7 +23,7 @@ namespace SalesCineProject.Services
         }
 
 
-        public void Insert (Movie obj)
+        public void Insert(Movie obj)
         {
             _context.Add(obj);
             _context.SaveChanges();
@@ -31,8 +31,15 @@ namespace SalesCineProject.Services
 
 
         public Movie FindById(int? id)
-       {
+        {
             return _context.Movie.FirstOrDefault(obj => obj.Id == id);
+        }
+
+        public void Remove(int id)
+        {
+            var obj = _context.Movie.Find(id);
+            _context.Remove(obj);
+            _context.SaveChanges();
         }
     }
 }
