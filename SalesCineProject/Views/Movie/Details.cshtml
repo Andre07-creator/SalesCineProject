@@ -1,4 +1,4 @@
-﻿
+﻿@model SalesCineProject.Models.Movie
 @{
     ViewData["title"] = "Details";
 }
@@ -8,7 +8,18 @@
     <h4>Movie details</h4>
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => Mode)
+            @Html.DisplayNameFor(model => Model.Name)
         </dt>
+        <dd>
+            @Html.DisplayFor(model => Model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => Model.Hour)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => Model.Hour.Hour)
+        </dd>
     </dl>
 </div>
+<input type="submit" value="Edit" class="btn btn-default" />
+<a asp-action="Index">Back to list</a>

@@ -1,0 +1,19 @@
+﻿@model SalesCineProject.Models.ViewModels.MovieViewModel
+@{
+    ViewData["title"] = "Edit";
+}
+<h1>@ViewData["title"]</h1>
+<h4>Editar dados:</h4>
+<hr />
+<div class="col-md-4">
+    <form asp-action="Edit">
+        <input type="hidden" asp-for="Movie.Id" />
+        <div class="form-group">
+            <label asp-for="Movie.Name" class="control-label"></label>
+            <input asp-for="Movie.Name" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Movie.Hour" class="control-label"></label>
+        </div>
+    </form>
+</div>

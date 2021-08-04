@@ -37,12 +37,12 @@ namespace SalesCineProject.Controllers
         }
         public IActionResult Delete(int? id)
         {
-            if(id == null)
+            if (id == null)
             {
                 return NotFound();
             }
             var obj = _movieservice.FindById(id.Value);
-            if(obj == null)
+            if (obj == null)
             {
                 return NotFound();
             }
@@ -57,16 +57,30 @@ namespace SalesCineProject.Controllers
         }
         public IActionResult Details(int? id)
         {
-            if(id == null)
+            if (id == null)
             {
                 return NotFound();
             }
             var obj = _movieservice.FindById(id.Value);
-            if(obj == null)
+            if (obj == null)
             {
                 return NotFound();
             }
             return View(obj);
+        }
+        public IActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var obj = _movieservice.FindById(id);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+            var viewmodel = new MovieViewModel { Movie = obj };
+            return View(viewmodel);
         }
     }
 }
