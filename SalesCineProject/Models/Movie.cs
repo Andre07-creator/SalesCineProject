@@ -10,8 +10,6 @@ namespace SalesCineProject.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public DateTime Hour { get; set; }
-        //public Ticket Ticket { get; set; }
-
         public Movie()
         {
            
@@ -22,7 +20,6 @@ namespace SalesCineProject.Models
             Id = id;
             Name = name;
             Hour = hour;
-           // Ticket = ticket;
         }
     }
 }

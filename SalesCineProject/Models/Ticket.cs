@@ -12,7 +12,6 @@ namespace SalesCineProject.Models
         public DateTime Date { get; set; } = DateTime.Now;
         public PaymentForm Payment { get; set; }
         public int MovieId { get; set; }
-        //public ICollection<Movie> Movies { get; set; } = new List<Movie>();
         public Movie Movie { get; set; }
 
         public Ticket()
@@ -24,20 +23,8 @@ namespace SalesCineProject.Models
             Id = id;
             Client = client;
             Price = price;
-           // Date = DateTime.Now;
             Payment = payment;
             Movie = movie;
         }
-
-        /*public void AddMovie(Movie mv)
-        {
-            Movies.Add(mv);
-        }
-
-        public void RemoveMovie(Movie mv)
-        {
-            Movies.Remove(mv);
-        }*/
-
     }
 }

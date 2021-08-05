@@ -44,7 +44,7 @@ namespace SalesCineProject.Services
         }
         public void Update(Movie obj)
         {
-            if(_context.Movie.Any(x => x.Id == obj.Id))
+            if(!_context.Movie.Any(x => x.Id == obj.Id))
             {
                 throw new NotFoundException("Id not found");
             }
