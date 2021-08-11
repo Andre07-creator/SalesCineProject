@@ -28,12 +28,8 @@
             <th>
                 @Html.DisplayNameFor(model => model.Payment)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Movie.Hour)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Movie.Name)
-            </th>
+            
+            <th></th>
         </tr>
     </thead>
 
@@ -54,15 +50,10 @@
             <th>
                 @Html.DisplayFor(modelItem => item.Payment)
             </th>
-            <th>
-                @Html.DisplayFor(modelItem => item.Movie.Hour.Hour)
-            </th>
-            <th>
-                @Html.DisplayFor(modelItem => item.Movie)
-            </th>
+            
             <th>
                 <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                @*<a asp-action="Edit" asp-route-id="@item.Id">Edit</a>*@
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a>
             </th>
         </tr>
